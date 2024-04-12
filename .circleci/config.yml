@@ -12,6 +12,14 @@ jobs:
       # Specify the version you desire here
       # See: https://circleci.com/developer/images/image/cimg/base
       - image: cimg/base:current
+    build:
+      docker:
+        - image: cimg/node:VERSION  # Remplacez "VERSION" par la version de Node.js souhaitée
+      steps:
+        - checkout
+        - run:
+            name: Install npm
+            command: npm install
     environment:
       VERCEL_ORG_ID: $VERCEL_ORG_ID
       VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID
