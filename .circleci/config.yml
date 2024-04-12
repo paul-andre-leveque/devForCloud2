@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   DevCloudNpm:
     docker:
-      - image: cimg/node:VERSION
+      - image: cimg/node:20.12.2
     steps:
       - checkout
       - run:
