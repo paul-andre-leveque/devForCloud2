@@ -38,4 +38,6 @@ workflows:
   DevCloudY:
     jobs:
       - DevCloudNpm
-      - DevCloudVercel
+      - DevCloudVercel:
+          requires:
+            - DevCloudNpm
