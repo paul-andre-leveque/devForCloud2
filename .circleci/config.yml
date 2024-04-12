@@ -1,7 +1,17 @@
 version: 2.1
 
 jobs:
-  DevCloud:
+  DevCloudNpm:
+    docker:
+      - image: cimg/node:VERSION
+    steps:
+      - checkout
+      - run:
+          name: Install npm
+          command: npm install
+
+
+  DevCloudVercel:
     docker:
       - image: cimg/base:current
     environment:
@@ -27,4 +37,5 @@ jobs:
 workflows:
   DevCloudY:
     jobs:
-      - DevCloud
+      - DevCloudNpm
+      - DevCloudVercel
