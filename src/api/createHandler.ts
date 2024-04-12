@@ -1,6 +1,7 @@
 import { CustomError } from '@/error-handling/CustomError';
 import { NextApiHandler } from 'next';
 
+
 export const createHandler =
   (fn: NextApiHandler): NextApiHandler =>
   async (req, res) => {
